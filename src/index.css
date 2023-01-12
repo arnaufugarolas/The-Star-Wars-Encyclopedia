@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Arvo';
+    src: url('../resources/fonts/Arvo-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('../resources/fonts/Arvo-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('../resources/fonts/Arvo-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('../resources/fonts/Arvo-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+:root {
+    --clr-black: #000000FF;
+    --clr-dark-blue: #17184EFF;
+    --clr-burgundy: #A12632FF;
+    --clr-red: #D81114FF;
+    --clr-yellow: #FFE81FFF;
+    --ff-primary-body: 'Arvo';
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
