@@ -1,3 +1,14 @@
+#IDE
+.idea/
+.vscode/
+
+#lock files
+package-lock.json
+yarn.lock
+
+#Yarn 2
+.pnp.*
+
 # Logs
 logs
 *.log
@@ -40,6 +51,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.yarn/
 
 # TypeScript v1 declaration files
 typings/
