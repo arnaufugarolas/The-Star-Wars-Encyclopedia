@@ -25,6 +25,7 @@
   },
   "eslintConfig": {
     "parser": "@babel/eslint-parser",
+    "requireConfigFile": false,
     "extends": [
       "standard",
       "standard-jsx",
