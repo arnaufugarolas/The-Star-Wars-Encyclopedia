@@ -26,7 +26,9 @@
   "eslintConfig": {
     "parser": "@babel/eslint-parser",
     "extends": [
-      "standard"
+      "standard",
+      "standard-jsx",
+      "standard-react"
     ]
   },
   "dependencies": {
@@ -43,7 +45,6 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.19.1",
-    "@stylelint/postcss-css-in-js": "^0.38.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-config-standard-jsx": "^11.0.0",
     "eslint-plugin-import": "^2.27.4",
@@ -52,15 +53,6 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "postcss": "^8.4.21",
-    "postcss-jsx": "^0.36.4",
-    "postcss-syntax": "^0.36.2",
-    "standard": "^17.0.0",
-    "stylelint": "^14.16.1",
-    "stylelint-config-idiomatic-order": "^9.0.0",
-    "stylelint-config-standard": "^29.0.0"
-  },
-  "peerDependencies": {
-    "postcss-jsx": "*"
+    "standard": "^17.0.0"
   }
 }
