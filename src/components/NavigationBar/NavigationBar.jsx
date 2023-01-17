@@ -1,15 +1,20 @@
 import React from 'react'
 import NavigationItem from '../NavigationItem/NavigationItem'
+import { Bar, Container } from './styles'
 
 const NavigationBar = () => {
   return (
-    <nav>
-      <ul>
-        <NavigationItem link='/'>Home</NavigationItem>
-        <NavigationItem link='/about'>About</NavigationItem>
-        <NavigationItem link='/contact'>Contact</NavigationItem>
-      </ul>
-    </nav>
+    <Container>
+      <Bar>
+        <NavigationItem />
+        <NavigationItem />
+        <NavigationItem />
+        <NavigationItem />
+        <NavigationItem />
+        <NavigationItem />
+        <NavigationItem />
+      </Bar>
+    </Container>
   )
 }
 

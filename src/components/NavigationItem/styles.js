@@ -15,5 +15,5 @@ MenuItem.defaultProps = {
   height: '5rem',
   textColor: 'var(--clr-yellow)',
   fontFamily: 'var(--ff-primary-body)',
-  fontSize: '1.5rem'
+  fontSize: '2rem'
 }
