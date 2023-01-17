@@ -1,9 +1,9 @@
 import React from 'react'
-import NavigationItem from '../NavigationItem/NavigationItem'
+import NavigationBar from '../NavigationBar/NavigationBar'
 
 function App () {
   return (
-    <NavigationItem link='/'>Home</NavigationItem>
+    <NavigationBar />
   )
 }
 
