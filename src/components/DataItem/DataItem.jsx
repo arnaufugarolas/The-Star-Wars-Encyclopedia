@@ -1,11 +1,12 @@
 import React from 'react'
+import { DataContainer, BoltText } from './styles'
 
 function DataItem ({ title, content }) {
   return (
-    <div>
-      <h1>{title}</h1>
+    <DataContainer>
+      <BoltText>{title}</BoltText>
       <p>{content}</p>
-    </div>
+    </DataContainer>
   )
 }
 
