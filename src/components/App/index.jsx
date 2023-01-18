@@ -1,9 +1,9 @@
 import React from 'react'
 
 function Index () {
-  return (
-    <div className='App' />
-  )
+  <div>
+    <h1>Hola</h1>
+  </div>
 }
 
 export default Index
