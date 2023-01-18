@@ -1,6 +1,6 @@
 {
   "name": "the-star-wars-encyclopedia",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/arnaufugarolas/The-Star-Wars-Encyclopedia.git"
@@ -25,6 +25,10 @@
   },
   "eslintConfig": {
     "parser": "@babel/eslint-parser",
+    "requireConfigFile": false,
+    "rules": {
+      "react/prop-types": "off"
+    },
     "extends": [
       "standard",
       "standard-jsx",
