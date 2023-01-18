@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TitleContent ({ title, content }) {
+function DataItem ({ title, content }) {
   return (
     <div>
       <h1>{title}</h1>
@@ -9,4 +9,4 @@ function TitleContent ({ title, content }) {
   )
 }
 
-export default TitleContent
+export default DataItem
