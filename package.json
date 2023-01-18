@@ -25,7 +25,9 @@
   },
   "eslintConfig": {
     "parser": "@babel/eslint-parser",
-    "requireConfigFile": false,
+    "parserOptions": {
+      "requireConfigFile": false
+    },
     "rules": {
       "react/prop-types": "off"
     },

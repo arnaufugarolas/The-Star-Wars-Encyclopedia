@@ -1,10 +1,9 @@
 import React from 'react'
-import NavigationBar from '../NavigationBar/NavigationBar'
 
-function App () {
+function Index () {
   return (
-    <NavigationBar />
+    <div className='App' />
   )
 }
 
-export default App
+export default Index
