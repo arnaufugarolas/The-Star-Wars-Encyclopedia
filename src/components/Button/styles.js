@@ -10,3 +10,9 @@ export const Button = styled.button`
   background-repeat: no-repeat;
   background-size: 100%;
 `
+
+Button.defaultProps = {
+  className: 'button',
+  width: '5rem',
+  height: '5rem'
+}
