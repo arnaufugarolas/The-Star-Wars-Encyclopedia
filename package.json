@@ -25,6 +25,10 @@
   },
   "eslintConfig": {
     "parser": "@babel/eslint-parser",
+    "requireConfigFile": false,
+    "rules": {
+      "react/prop-types": "off"
+    },
     "extends": [
       "standard",
       "standard-jsx",
