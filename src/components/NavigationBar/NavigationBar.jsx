@@ -1,11 +1,13 @@
 import React from 'react'
 import NavigationItem from '../NavigationItem/NavigationItem'
+import LanguageButtonSelector from '../LanguageButtonSelector/LanguageButtonSelector'
 import { Bar, Container } from './styles'
 
 const NavigationBar = () => {
   return (
     <Container>
       <Bar>
+        <LanguageButtonSelector />
         <NavigationItem pageName='Home' />
         <NavigationItem pageName='People' />
         <NavigationItem pageName='Films' />
