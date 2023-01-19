@@ -1,9 +1,9 @@
 import React from 'react'
-import Home from '../Home/Home'
+import ItemPage from '../ItemPage/ItemPage'
 
 function Index () {
   return (
-    <Home />
+    <ItemPage />
   )
 }
 
