@@ -1,11 +1,11 @@
 import React from 'react'
 import { TextContainer, LanguageImage, LanguageText } from './styles'
 
-const LanguageItem = ({ image, text, onClick }) => {
+const LanguageItem = ({ src, text }) => {
   return (
-    <TextContainer>
-      <LanguageImage src={image} alt={text} />
-      <LanguageText onClick={onClick}>{text}</LanguageText>
+    <TextContainer style={{ display: 'flex', alignItems: 'center' }}>
+      <LanguageImage src={src} alt={text} style={{ flexShrink: '0', maxHeight: '100%' }} />
+      <LanguageText>{text}</LanguageText>
     </TextContainer>
   )
 }

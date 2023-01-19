@@ -5,9 +5,10 @@ export const TextContainer = styled.div`
     align-items: center;
 `
 export const LanguageImage = styled.image`
- flex: 1;
+  flexShrink: 0;
+  maxHeight: 100%;
 `
-export const LanguageText = styled.p`
+export const LanguageText = styled.span`
  flex: 1;
  cursor: pointer;
  color: ${props => props.textColor};
