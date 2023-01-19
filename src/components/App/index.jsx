@@ -1,12 +1,12 @@
 import React from 'react'
-import Index from '../Home'
+import Home from '../Home'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
-function Index () {
+const Index = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Index />} />
+        <Route path='/' element={<Home />} />
       </Routes>
     </BrowserRouter>
   )
