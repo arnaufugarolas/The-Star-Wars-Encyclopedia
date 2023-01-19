@@ -8,7 +8,6 @@ export const TitleCard = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: ${props => props.borderRadius};
-  margin: 10%;
   background-color: ${props => props.backgroundColor};
   color: ${props => props.textColor};
   font-family: ${props => props.fontFamily};

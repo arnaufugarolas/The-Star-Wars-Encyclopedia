@@ -1,5 +1,5 @@
 import React from 'react'
-import DataItem from '../DataItem/DataItem'
+import DataItem from '../DataItem'
 import { DataCard } from './styles'
 
 function Index (props) {
