@@ -1,12 +1,13 @@
 import React from 'react'
-import { TextContainer, LanguageImage, LanguageText } from './styles'
+import { LanguageText } from './styles'
 
-const LanguageItem = ({ src, text }) => {
+function LanguageItem (props) {
+  const languages = props.languages
+  const listLanguages = languages.map((language) =>
+    <LanguageText key={language}>{language}</LanguageText>
+  )
   return (
-    <TextContainer style={{ display: 'flex', alignItems: 'center' }}>
-      <LanguageImage src={src} alt={text} style={{ flexShrink: '0', maxHeight: '100%' }} />
-      <LanguageText>{text}</LanguageText>
-    </TextContainer>
+    <ul>{listLanguages}</ul>
   )
 }
 
