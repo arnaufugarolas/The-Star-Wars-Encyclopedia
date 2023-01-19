@@ -1,9 +1,14 @@
 import React from 'react'
-import Home from '../Home/Home'
+import Index from '../Home'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 function Index () {
   return (
-    <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Index />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

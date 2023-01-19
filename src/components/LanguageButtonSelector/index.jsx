@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import LanguageSelector from '../LanguageSelector/LanguageSelector'
+import Index from '../LanguageSelector'
 import { ClicableText, Container } from './styles'
 
-const LanguageButtonSelector = () => {
+const Index = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -10,7 +10,7 @@ const LanguageButtonSelector = () => {
       <ClicableText onClick={() => setIsOpen(!isOpen)}>ENG</ClicableText>
       {isOpen && (
         <Container>
-          <LanguageSelector />
+          <Index />
           <button onClick={() => setIsOpen(false)}>Close</button>
         </Container>
       )}
@@ -18,4 +18,4 @@ const LanguageButtonSelector = () => {
   )
 }
 
-export default LanguageButtonSelector
+export default Index

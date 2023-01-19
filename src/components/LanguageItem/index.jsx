@@ -1,7 +1,7 @@
 import React from 'react'
 import { LanguageText } from './styles'
 
-const LanguageItem = ({ languages }) => {
+const Index = ({ languages }) => {
   return (
     <ul>
       {languages.map((language, index) => (
@@ -11,4 +11,4 @@ const LanguageItem = ({ languages }) => {
   )
 }
 
-export default LanguageItem
+export default Index
