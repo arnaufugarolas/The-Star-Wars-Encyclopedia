@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import LanguageSelector from '../LanguageSelector/LanguageSelector'
+import LanguageSelector from '../LanguageSelector'
 import { ClicableText, Container } from './styles'
 
-const LanguageButtonSelector = () => {
+const Index = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -18,4 +18,4 @@ const LanguageButtonSelector = () => {
   )
 }
 
-export default LanguageButtonSelector
+export default Index

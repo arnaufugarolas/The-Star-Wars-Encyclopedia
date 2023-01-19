@@ -1,7 +1,7 @@
 import React from 'react'
 import { MenuItem } from './styles'
 
-const NavigationItem = (props) => {
+const Index = (props) => {
   const { link, pageName } = props
   return (
     <li>
@@ -9,8 +9,8 @@ const NavigationItem = (props) => {
     </li>
   )
 }
-NavigationItem.defaultProps = {
+Index.defaultProps = {
   link: '',
   pageName: 'Home'
 }
-export default NavigationItem
+export default Index

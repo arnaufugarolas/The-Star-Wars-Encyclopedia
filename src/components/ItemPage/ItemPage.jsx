@@ -1,5 +1,5 @@
 import React from 'react'
-import NavigationBar from '../NavigationBar/NavigationBar'
+import NavigationBar from '../NavigationBar/'
 import TitleCard from '../TitleCard/index'
 import DataCard from '../DataCard/index'
 import { BackgroundColor, CentralDiv } from './styles'

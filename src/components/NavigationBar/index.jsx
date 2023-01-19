@@ -1,9 +1,9 @@
 import React from 'react'
-import NavigationItem from '../NavigationItem/NavigationItem'
-import LanguageButtonSelector from '../LanguageButtonSelector/LanguageButtonSelector'
+import NavigationItem from '../NavigationItem'
+import LanguageButtonSelector from '../LanguageButtonSelector'
 import { Bar, Container } from './styles'
 
-const NavigationBar = () => {
+const Index = () => {
   return (
     <Container>
       <Bar>
@@ -20,4 +20,4 @@ const NavigationBar = () => {
   )
 }
 
-export default NavigationBar
+export default Index

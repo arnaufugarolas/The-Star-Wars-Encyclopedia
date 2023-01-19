@@ -12,7 +12,5 @@ export const Button = styled.button`
 `
 
 Button.defaultProps = {
-  className: 'button',
-  width: '5rem',
-  height: '5rem'
+  className: 'button', width: '5rem', height: '5rem'
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import NavigationBar from '../NavigationBar/NavigationBar'
+import NavigationBar from '../NavigationBar'
 import CategoryCard from '../CategoryCard/index'
 import { BackgroundColor, CardsDiv } from './styles'
 import character from '../Home/images/characters.png'
@@ -9,7 +9,7 @@ import vehicle from '../Home/images/vehicles.png'
 import starship from '../Home/images/starships.png'
 import planet from '../Home/images/planets.png'
 
-const Home = () => {
+const Index = () => {
   return (
     <BackgroundColor>
       <NavigationBar />
@@ -27,4 +27,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Index

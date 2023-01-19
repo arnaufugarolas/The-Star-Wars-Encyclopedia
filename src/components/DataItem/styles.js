@@ -37,10 +37,10 @@ export const NormalText = styled(Text)`
 `
 
 export const LinkText = styled(NormalText)`
+  color: ${props => props.textColor};
   font-family: ${props => props.fontFamily};
   font-size: ${props => props.fontSize};
-  color: ${props => props.textColor};
-  `
+`
 
 LinkText.defaultProps = {
   textColor: 'var(--clr-burgundy)'

@@ -1,12 +1,12 @@
 import { Button } from './styles'
-import React, { useCallback } from 'react'
+import React from 'react'
 
 export const Index = (props) => {
   const { image, clickAction } = props
 
-  const clickHandler = useCallback(() => {
+  const clickHandler = () => {
     clickAction()
-  }, [])
+  }
 
   return (
     <Button

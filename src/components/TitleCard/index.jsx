@@ -17,7 +17,7 @@ export const Index = (props) => {
 
 Index.defaultProps = {
   title: 'Title',
-  onClickAction: {}
+  onClickAction: () => {}
 }
 
 export default Index
