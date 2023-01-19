@@ -1,22 +1,12 @@
 import React from 'react'
-import Data from '../DataItem/DataItem'
+import LItem from '../LanguageItem/LanguageItem'
 
 function Index () {
   return (
-    <div>
-      <Data
-        title='Height:'
-        content='172 cm'
-      />
-      <Data
-        title='Mass:'
-        content='72kg'
-      />
-      <Data
-        title='Hair Color:'
-        content='Blond'
-      />
-    </div>
+    <LItem
+      Image='https://i.ebayimg.com/images/g/bsIAAOSwVL1WE152/s-l500.jpg'
+      text='España'
+    />
   )
 }
 
