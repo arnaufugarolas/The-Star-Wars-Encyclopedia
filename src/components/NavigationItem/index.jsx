@@ -1,16 +1,16 @@
 import React from 'react'
-import { MenuItem } from './styles'
+import { MenuItem, MenuLink } from './styles'
 
 const Index = (props) => {
-  const { link, pageName } = props
+  const { route, pageName } = props
   return (
-    <li>
-      <MenuItem href={link}>{pageName}</MenuItem>
-    </li>
+    <MenuLink to={route}>
+      <MenuItem>{pageName}</MenuItem>
+    </MenuLink>
   )
 }
 Index.defaultProps = {
-  link: '',
-  pageName: 'Home'
+  pageName: 'Home',
+  route: '/'
 }
 export default Index

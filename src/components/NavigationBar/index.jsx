@@ -3,18 +3,28 @@ import NavigationItem from '../NavigationItem'
 import LanguageButtonSelector from '../LanguageButtonSelector'
 import { Bar, Container } from './styles'
 
+const routes = [
+  { route: '/', pageName: 'Home' },
+  { route: '/people', pageName: 'People' },
+  { route: '/films', pageName: 'Films' },
+  { route: '/species', pageName: 'Species' },
+  { route: '/vehicles', pageName: 'Vehicles' },
+  { route: '/starships', pageName: 'Starships' },
+  { route: '/planets', pageName: 'Planets' }
+]
+
 const Index = () => {
   return (
     <Container>
       <Bar>
         <LanguageButtonSelector />
-        <NavigationItem pageName='Home' />
-        <NavigationItem pageName='People' />
-        <NavigationItem pageName='Films' />
-        <NavigationItem pageName='Species' />
-        <NavigationItem pageName='Vehicles' />
-        <NavigationItem pageName='Starships' />
-        <NavigationItem pageName='Planets' />
+        {routes.map((route, index) => (
+          <NavigationItem
+            key={index}
+            route={route.route}
+            pageName={route.pageName}
+          />
+        ))}
       </Bar>
     </Container>
   )

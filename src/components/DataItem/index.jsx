@@ -15,12 +15,16 @@ function Index (props) {
     <DataContainer>
       <BoltText>{title}:</BoltText>
       {redirect
-        ? <Router>
-          <RedirectionLink to={redirect}>
-            <LinkText>{content}</LinkText>
-          </RedirectionLink>
-        </Router> // eslint-disable-line react/jsx-closing-tag-location
-        : <NormalText>{content}</NormalText>}
+        ? (
+          <Router>
+            <RedirectionLink to={redirect}>
+              <LinkText>{content}</LinkText>
+            </RedirectionLink>
+          </Router>
+          )
+        : (
+          <NormalText>{content}</NormalText>
+          )}
     </DataContainer>
   )
 }

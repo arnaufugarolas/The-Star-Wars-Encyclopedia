@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Link } from 'react-router-dom'
 
 export const TitleCard = styled.div`
   display: flex;
@@ -12,6 +13,10 @@ export const TitleCard = styled.div`
   color: ${props => props.textColor};
   font-family: ${props => props.fontFamily};
   font-size: ${props => props.fontSize};
+`
+
+export const MenuLink = styled(Link)`
+  text-decoration: none;
 `
 
 TitleCard.defaultProps = {

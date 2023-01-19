@@ -1,7 +1,7 @@
 import React from 'react'
 import LanguageItem from '../LanguageItem'
 import Button from '../Button/index'
-import button from '../LanguageSelector/button.png'
+import button from './resources/images/button.png'
 import { LanguageItemContainer, SelectLanguage, LanguageSelectorContainer, ButtonContainer } from './styles'
 
 const languages = ['English', 'Wookiee', 'German', 'Bulgarian', 'Czech', 'Chinese (simplified)', 'Danish', 'Slovak', 'Slovenian', 'Estonian']
