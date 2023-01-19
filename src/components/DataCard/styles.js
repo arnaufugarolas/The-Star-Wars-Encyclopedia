@@ -1,10 +1,9 @@
 import styled from '@emotion/styled'
 
-export const TitleCard = styled.div`
-  display: flex;
+export const DataCard = styled.div`
+  display: list-item;
   overflow: clip;
   width: ${props => props.width};
-  height: ${props => props.height};
   align-items: center;
   justify-content: center;
   border-radius: ${props => props.borderRadius};
@@ -14,10 +13,9 @@ export const TitleCard = styled.div`
   font-size: ${props => props.fontSize};
 `
 
-TitleCard.defaultProps = {
-  className: 'title-card',
-  width: '15rem',
-  height: '5rem',
+DataCard.defaultProps = {
+  className: 'data-card',
+  width: '20rem',
   fontSize: '1.5rem',
   backgroundColor: 'var(--clr-black)',
   textColor: 'var(--clr-yellow)',
