@@ -10,6 +10,12 @@ export const LanguageSelectorContainer = styled.div`
  padding: 16px;
 `
 
+export const ButtonContainer = styled.div`
+display: flex;
+align-items: flex-start;
+justify-content: flex-end;
+`
+
 export const LanguageItemContainer = styled.div`
  display: grid;
  grid-template-columns: repeat(3, 1fr);

@@ -1,6 +1,8 @@
 import React from 'react'
 import LanguageItem from '../LanguageItem/LanguageItem'
-import { LanguageItemContainer, SelectLanguage, LanguageSelectorContainer } from './styles'
+import Button from '../Button/index'
+import button from '../LanguageSelector/button.png'
+import { LanguageItemContainer, SelectLanguage, LanguageSelectorContainer, ButtonContainer } from './styles'
 
 const languages = ['English', 'Wookiee', 'German', 'Bulgarian', 'Czech', 'Chinese (simplified)', 'Danish', 'Slovak', 'Slovenian', 'Estonian']
 const languages2 = ['Spanish', 'Finnish', 'French', 'Greek', 'Hungarian', 'Indonesian', 'Italian', 'Japanese', ' Latvin', 'Lithuanian']
@@ -10,6 +12,9 @@ const LanguageSelector = () => {
   return (
     <LanguageSelectorContainer>
       <SelectLanguage>Select your Language</SelectLanguage>
+      <ButtonContainer>
+        <Button image={button} />
+      </ButtonContainer>
       <LanguageItemContainer>
         <LanguageItem languages={languages} />
         <LanguageItem languages={languages2} />
