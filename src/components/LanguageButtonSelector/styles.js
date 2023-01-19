@@ -5,6 +5,7 @@ export const ClicableText = styled.p`
   height: ${props => props.height};
   align-items: center;
   justify-content: center;
+  display: flex;
   color: ${props => props.textColor};
   font-family: ${props => props.fontFamily};
   font-size: ${props => props.fontSize};

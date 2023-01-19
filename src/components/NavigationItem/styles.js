@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
 
 export const MenuItem = styled.p`
+  display: flex;
   width: ${props => props.width};
   height: ${props => props.height};
   align-items: center;
