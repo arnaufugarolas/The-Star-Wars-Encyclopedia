@@ -1,9 +1,9 @@
 import React from 'react'
-import LanguageSelector from '../LanguageSelector/LanguageSelector'
+import Home from '../Home/Home'
 
 function Index () {
   return (
-    <LanguageSelector />
+    <Home />
   )
 }
 

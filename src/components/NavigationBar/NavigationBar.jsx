@@ -6,13 +6,13 @@ const NavigationBar = () => {
   return (
     <Container>
       <Bar>
-        <NavigationItem />
-        <NavigationItem />
-        <NavigationItem />
-        <NavigationItem />
-        <NavigationItem />
-        <NavigationItem />
-        <NavigationItem />
+        <NavigationItem pageName='Home' />
+        <NavigationItem pageName='People' />
+        <NavigationItem pageName='Films' />
+        <NavigationItem pageName='Species' />
+        <NavigationItem pageName='Vehicles' />
+        <NavigationItem pageName='Starships' />
+        <NavigationItem pageName='Planets' />
       </Bar>
     </Container>
   )
