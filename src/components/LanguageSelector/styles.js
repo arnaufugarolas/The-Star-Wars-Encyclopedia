@@ -6,8 +6,6 @@ export const LanguageSelectorContainer = styled.div`
  justify-content: center;
  max-width: 60rem;
  margin: 0 auto;
- grid-gap: 16px;
- padding: 16px;
 `
 
 export const ButtonContainer = styled.div`

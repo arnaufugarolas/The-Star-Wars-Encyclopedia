@@ -5,3 +5,7 @@ export const BackgroundColor = styled.div`
  width: 100vw;
  height: 100vh;
 `
+export const CentralDiv = styled.div`
+display: flex;
+justify-content: center;
+`

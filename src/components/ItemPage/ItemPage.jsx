@@ -1,15 +1,19 @@
 import React from 'react'
 import NavigationBar from '../NavigationBar/NavigationBar'
 import TitleCard from '../TitleCard/index'
-import { BackgroundColor } from './styles'
+import DataCard from '../DataCard/index'
+import { BackgroundColor, CentralDiv } from './styles'
 
 const ItemPage = () => {
   return (
     <BackgroundColor>
       <NavigationBar />
-      <div>
+      <CentralDiv>
         <TitleCard />
-      </div>
+      </CentralDiv>
+      <CentralDiv>
+        <DataCard />
+      </CentralDiv>
     </BackgroundColor>
   )
 }
