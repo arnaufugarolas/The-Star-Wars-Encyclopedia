@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Index from '../LanguageSelector'
+import LanguageSelector from '../LanguageSelector'
 import { ClicableText, Container } from './styles'
 
 const Index = () => {
@@ -10,7 +10,7 @@ const Index = () => {
       <ClicableText onClick={() => setIsOpen(!isOpen)}>ENG</ClicableText>
       {isOpen && (
         <Container>
-          <Index />
+          <LanguageSelector />
           <button onClick={() => setIsOpen(false)}>Close</button>
         </Container>
       )}

@@ -1,5 +1,5 @@
 import React from 'react'
-import Index from '../NavigationBar'
+import NavigationBar from '../NavigationBar'
 import CategoryCard from '../CategoryCard/index'
 import { BackgroundColor, CardsDiv } from './styles'
 import character from '../Home/images/characters.png'
@@ -12,7 +12,7 @@ import planet from '../Home/images/planets.png'
 const Index = () => {
   return (
     <BackgroundColor>
-      <Index />
+      <NavigationBar />
       <CardsDiv>
         <CategoryCard categoryName='People' categoryImage={character} />
         <CategoryCard categoryName='Species' categoryImage={species} />

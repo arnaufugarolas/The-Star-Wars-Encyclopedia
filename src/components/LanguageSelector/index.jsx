@@ -1,5 +1,5 @@
 import React from 'react'
-import Index from '../LanguageItem'
+import LanguageItem from '../LanguageItem'
 import Button from '../Button/index'
 import button from '../LanguageSelector/button.png'
 import { LanguageItemContainer, SelectLanguage, LanguageSelectorContainer, ButtonContainer } from './styles'
@@ -16,9 +16,9 @@ const Index = () => {
         <Button image={button} />
       </ButtonContainer>
       <LanguageItemContainer>
-        <Index languages={languages} />
-        <Index languages={languages2} />
-        <Index languages={languages3} />
+        <LanguageItem languages={languages} />
+        <LanguageItem languages={languages2} />
+        <LanguageItem languages={languages3} />
       </LanguageItemContainer>
     </LanguageSelectorContainer>
   )

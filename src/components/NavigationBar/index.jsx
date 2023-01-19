@@ -1,20 +1,20 @@
 import React from 'react'
-import Index from '../NavigationItem'
-import Index from '../LanguageButtonSelector'
+import NavigationItem from '../NavigationItem'
+import LanguageButtonSelector from '../LanguageButtonSelector'
 import { Bar, Container } from './styles'
 
 const Index = () => {
   return (
     <Container>
       <Bar>
-        <Index />
-        <Index pageName='Home' />
-        <Index pageName='People' />
-        <Index pageName='Films' />
-        <Index pageName='Species' />
-        <Index pageName='Vehicles' />
-        <Index pageName='Starships' />
-        <Index pageName='Planets' />
+        <LanguageButtonSelector />
+        <NavigationItem pageName='Home' />
+        <NavigationItem pageName='People' />
+        <NavigationItem pageName='Films' />
+        <NavigationItem pageName='Species' />
+        <NavigationItem pageName='Vehicles' />
+        <NavigationItem pageName='Starships' />
+        <NavigationItem pageName='Planets' />
       </Bar>
     </Container>
   )
