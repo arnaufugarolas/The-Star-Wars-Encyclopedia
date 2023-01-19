@@ -10,6 +10,13 @@ font-family: ${props => props.fontFamily};
 font-size: ${props => props.fontSize};
 `
 
+export const Container = styled.div`
+ position: absolute; 
+ top: 50%; 
+ left: 50%; 
+ transform: translate(-50%, -50%);
+`
+
 ClicableText.defaultProps = {
   width: '15rem',
   height: '5rem',
