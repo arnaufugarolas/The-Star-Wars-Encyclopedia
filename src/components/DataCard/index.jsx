@@ -25,4 +25,9 @@ function Index (props) {
   )
 }
 
+Index.defaultProps = {
+  onClickAction: () => {},
+  data: []
+}
+
 export default Index
