@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
+import { Link } from 'react-router-dom'
 
-export const MenuItem = styled.a`
+export const MenuItem = styled.p`
   width: ${props => props.width};
   height: ${props => props.height};
   align-items: center;
@@ -8,6 +9,10 @@ export const MenuItem = styled.a`
   color: ${props => props.textColor};
   font-family: ${props => props.fontFamily};
   font-size: ${props => props.fontSize};
+`
+
+export const MenuLink = styled(Link)`
+  text-decoration: none;
 `
 
 MenuItem.defaultProps = {

@@ -1,15 +1,16 @@
 import React from 'react'
-import Home from '../Home'
+import HomePage from '../HomePage'
+import ItemPage from '../ItemPage'
+import Page from '../Page'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
-import ItemPage from '../ItemPage/ItemPage'
 
 const Index = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/:category' element={<Page />} />
         <Route path='/:category/:id' element={<ItemPage />} />
-        {/* <Route path='/:category' element={<CategoryPage />} /> */}
       </Routes>
     </BrowserRouter>
   )

@@ -1,23 +1,27 @@
-import { TitleCard } from './styles'
+import { MenuLink, TitleCard } from './styles'
 import React from 'react'
 
 export const Index = (props) => {
-  const { title, onClickAction } = props
-
-  const clickHandler = () => {
-    onClickAction()
-  }
+  const { title, route } = props
 
   return (
-    <TitleCard onClick={clickHandler}>
-      {title}
-    </TitleCard>
+    <>
+      {route
+        ? (
+          <MenuLink to={route}>
+            <TitleCard>{title}</TitleCard>
+          </MenuLink>
+          )
+        : (
+          <TitleCard>{title}</TitleCard>
+          )}
+    </>
   )
 }
 
 Index.defaultProps = {
   title: 'Title',
-  onClickAction: () => {}
+  route: undefined
 }
 
 export default Index

@@ -5,9 +5,3 @@ export const BackgroundColor = styled.div`
   height: 100vh;
   background-color: #17184E;
 `
-export const CardsDiv = styled.div`
-  display: grid;
-  margin-top: 1rem;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-`

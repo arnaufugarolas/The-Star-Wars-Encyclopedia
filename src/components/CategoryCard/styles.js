@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Link } from 'react-router-dom'
 
 export const CategoryCard = styled.div`
   display: flex;
@@ -28,3 +29,7 @@ CategoryCard.defaultProps = {
   textColor: 'var(--clr-yellow)',
   fontFamily: 'var(--ff-primary-body)'
 }
+
+export const CategoryLink = styled(Link)`
+  text-decoration: none;
+`
