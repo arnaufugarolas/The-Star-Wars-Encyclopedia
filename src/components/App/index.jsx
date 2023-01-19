@@ -1,8 +1,9 @@
 import React from 'react'
+import LanguageSelector from '../LanguageSelector/LanguageSelector'
 
 function Index () {
   return (
-    <div className='App' />
+    <LanguageSelector />
   )
 }
 
