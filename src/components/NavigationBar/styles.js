@@ -1,13 +1,13 @@
 import styled from '@emotion/styled'
+import { Unstable_Grid2 as Grid } from '@mui/material/'
 
-export const Bar = styled.ul`
+export const BarGrid = styled(Grid)`
   display: flex;
-  justify-content: space-evenly;
-  padding-top: 2.2rem;
-  text-align: center;
-`
-
-export const Container = styled.div`
-  height: 7rem;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   background-color: black;
+  text-align: center;
 `

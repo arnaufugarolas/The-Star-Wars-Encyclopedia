@@ -1,7 +1,8 @@
 import React from 'react'
 import NavigationItem from '../NavigationItem'
 import LanguageButtonSelector from '../LanguageButtonSelector'
-import { Bar, Container } from './styles'
+import { BarGrid } from './styles'
+import { Unstable_Grid2 as Grid } from '@mui/material/'
 
 const routes = [
   { route: '/', pageName: 'Home' },
@@ -15,18 +16,20 @@ const routes = [
 
 const Index = () => {
   return (
-    <Container>
-      <Bar>
+    <BarGrid container spacing='auto'>
+      <Grid item xs='auto'>
         <LanguageButtonSelector />
-        {routes.map((route, index) => (
+      </Grid>
+      {routes.map((route, index) => (
+        <Grid item xs='auto' key={index}>
           <NavigationItem
             key={index}
             route={route.route}
             pageName={route.pageName}
           />
-        ))}
-      </Bar>
-    </Container>
+        </Grid>
+      ))}
+    </BarGrid>
   )
 }
 
