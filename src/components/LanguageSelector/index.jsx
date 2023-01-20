@@ -2,7 +2,8 @@ import React from 'react'
 import LanguageItem from '../LanguageItem'
 import Button from '../Button/index'
 import button from './resources/images/button.png'
-import { LanguageItemContainer, SelectLanguage, LanguageSelectorContainer, ButtonContainer } from './styles'
+import { SelectLanguage, LanguageSelectorContainer, ButtonContainer } from './styles'
+import { Unstable_Grid2 as Grid } from '@mui/material/'
 
 const languages = ['English', 'Wookiee', 'German', 'Bulgarian', 'Czech', 'Chinese (simplified)', 'Danish', 'Slovak', 'Slovenian', 'Estonian']
 const languages2 = ['Spanish', 'Finnish', 'French', 'Greek', 'Hungarian', 'Indonesian', 'Italian', 'Japanese', ' Latvin', 'Lithuanian']
@@ -15,11 +16,17 @@ const Index = () => {
       <ButtonContainer>
         <Button image={button} />
       </ButtonContainer>
-      <LanguageItemContainer>
-        <LanguageItem languages={languages} />
-        <LanguageItem languages={languages2} />
-        <LanguageItem languages={languages3} />
-      </LanguageItemContainer>
+      <Grid container spacing={1}>
+        <Grid xs>
+          <LanguageItem languages={languages} />
+        </Grid>
+        <Grid xs>
+          <LanguageItem languages={languages2} />
+        </Grid>
+        <Grid xs>
+          <LanguageItem languages={languages3} />
+        </Grid>
+      </Grid>
     </LanguageSelectorContainer>
   )
 }
