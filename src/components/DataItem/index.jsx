@@ -6,25 +6,30 @@ import {
   NormalText,
   RedirectionLink
 } from './styles'
-import { BrowserRouter as Router } from 'react-router-dom'
 
 function Index (props) {
-  const { title, content, redirect } = props
+  const { title, content } = props
 
   return (
     <DataContainer>
-      <BoltText>{title}:</BoltText>
-      {redirect
+      <BoltText>{`${title}:`}</BoltText>
+      {content.includes('https')
         ? (
-          <Router>
-            <RedirectionLink to={redirect}>
-              <LinkText>{content}</LinkText>
-            </RedirectionLink>
-          </Router>
+          <RedirectionLink to={content.toString().replace('https://swapi.dev/api', '')}>
+            <LinkText>{content.toString().split('/').at(-2)}</LinkText>
+          </RedirectionLink>
           )
         : (
-          <NormalText>{content}</NormalText>
-          )}
+            content instanceof Array
+              ? (
+                  content.map((item, index) => (
+                    <RedirectionLink to={item.toString().replace('https://swapi.dev/api', '')} key={index}>
+                      <LinkText>{item.toString().split('/').at(-2)}</LinkText>
+                    </RedirectionLink>
+                  )))
+              : (
+                <NormalText>{content.toString()}</NormalText>
+                ))}
     </DataContainer>
   )
 }

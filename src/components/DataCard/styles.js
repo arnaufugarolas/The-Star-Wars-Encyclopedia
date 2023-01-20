@@ -15,7 +15,7 @@ export const DataCard = styled.div`
 
 DataCard.defaultProps = {
   className: 'data-card',
-  width: '20rem',
+  width: '40rem',
   fontSize: '1.5rem',
   backgroundColor: 'var(--clr-black)',
   textColor: 'var(--clr-yellow)',
