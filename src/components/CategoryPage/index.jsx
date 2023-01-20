@@ -33,11 +33,8 @@ export const Index = () => {
       } else {
         setLoading(false)
       }
-      console.log(res.data)
     })
   }
-
-  console.log(data)
 
   return (
     <Page>

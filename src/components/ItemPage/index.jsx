@@ -27,7 +27,6 @@ const Index = () => {
     axios.get(url).then((res) => {
       setData(res.data)
       setLoading(false)
-      console.log(res.data)
     })
   }
 
