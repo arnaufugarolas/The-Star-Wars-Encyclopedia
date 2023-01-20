@@ -3,15 +3,16 @@ import NavigationItem from '../NavigationItem'
 import LanguageButtonSelector from '../LanguageButtonSelector'
 import { BarGrid } from './styles'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
+import getStrings from '../../helpper/StringHelpper'
 
 const routes = [
-  { route: '/', pageName: 'Home' },
-  { route: '/people', pageName: 'People' },
-  { route: '/films', pageName: 'Films' },
-  { route: '/species', pageName: 'Species' },
-  { route: '/vehicles', pageName: 'Vehicles' },
-  { route: '/starships', pageName: 'Starships' },
-  { route: '/planets', pageName: 'Planets' }
+  { route: '/', pageName: 'home' },
+  { route: '/people', pageName: 'people' },
+  { route: '/films', pageName: 'films' },
+  { route: '/species', pageName: 'species' },
+  { route: '/vehicles', pageName: 'vehicles' },
+  { route: '/starships', pageName: 'starships' },
+  { route: '/planets', pageName: 'planets' }
 ]
 
 const Index = () => {
@@ -25,7 +26,7 @@ const Index = () => {
           <NavigationItem
             key={index}
             route={route.route}
-            pageName={route.pageName}
+            pageName={getStrings(route.pageName)}
           />
         </Grid>
       ))}
