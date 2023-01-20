@@ -5,6 +5,7 @@ import TitleCard from '../TitleCard'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import getStrings from '../../helpper/StringHelpper'
 
 export const Index = () => {
   const { category } = useParams()
@@ -36,17 +37,19 @@ export const Index = () => {
     })
   }
 
+  console.log(data)
+
   return (
     <Page>
-      <PageTitle>{category.toString()}</PageTitle>
+      <PageTitle>{getStrings(category)}</PageTitle>
       <CentralDiv>
         <CategoryGrid container spacing={5}>
           {data.map((item, index) => (
-            <Grid item xs='auto' sm='auto' md='auto' lg='auto' key={index}>
+            <Grid item xs='auto' key={index}>
               <TitleCard
                 key={index}
                 title={item.name}
-                route={`/${category}/${index + 1}`}
+                route={`/${category}/${item.url.split('/').at(-2)}`}
               />
             </Grid>))}
         </CategoryGrid>

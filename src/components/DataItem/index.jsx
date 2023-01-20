@@ -22,11 +22,19 @@ function Index (props) {
         : (
             content instanceof Array
               ? (
-                  content.map((item, index) => (
-                    <RedirectionLink to={item.toString().replace('https://swapi.dev/api', '')} key={index}>
-                      <LinkText>{item.toString().split('/').at(-2)}</LinkText>
-                    </RedirectionLink>
-                  )))
+                  content.at(0).includes('https')
+                    ? (
+                        content.map((item, index) => (
+                          <RedirectionLink to={item.toString().replace('https://swapi.dev/api', '')} key={index}>
+                            <LinkText>{item.toString().split('/').at(-2)}</LinkText>
+                          </RedirectionLink>
+                        )))
+                    : (
+                        content.map((item, index) => (
+                          <NormalText key={index}>{item}</NormalText>
+                        ))
+                      )
+                )
               : (
                 <NormalText>{content.toString()}</NormalText>
                 ))}
