@@ -4,22 +4,23 @@ import * as querystring from 'querystring'
 import { addToCache, getFromLanguageCache } from '../translationCache'
 import cyrb53 from '../cyrb53'
 
-const getStrings = (key, language) => {
-  const string = data[key] || key
+const getStrings = (key, language, context) => {
+  return new Promise((resolve) => {
+    const string = data[key.toString()][0] || key.toString()
 
-  if (language !== 'en' && language) {
-    const keyHash = cyrb53(string.toString())
+    if (language !== 'en' && language) {
+      const keyHash = cyrb53(string.toString())
+      const cachedTranslation = getFromLanguageCache(language, keyHash)
 
-    const cachedTranslation = getFromLanguageCache(language, keyHash)
-    console.log('cachedTranslation', cachedTranslation)
-    // if (cachedTranslation !== null) {
-    //   return cachedTranslation.translation
-    // }
-
-    return getStringFromDeepl(string, language, keyHash)
-  } else {
-    return string
-  }
+      if (cachedTranslation !== null) {
+        resolve(cachedTranslation.translation)
+      } else {
+        getStringFromDeepl(string, language, keyHash).then((result) => { resolve(result) })
+      }
+    } else {
+      resolve(string.toString())
+    }
+  })
 }
 
 const getStringFromDeepl = async (string, language, keyHash) => {
@@ -29,10 +30,10 @@ const getStringFromDeepl = async (string, language, keyHash) => {
     text: string.toString(),
     target_lang: language
   }
-
   const response = await axios.post(url, querystring.stringify(options))
+
   addToCache(language, keyHash, response.data.translations[0].text)
-  return await response.data.translations[0].text
+  return response.data.translations[0].text
 }
 
 export default getStrings

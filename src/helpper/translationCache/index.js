@@ -70,11 +70,17 @@ export const addToCache = (language, id, translation) => {
     data[language] = []
   }
 
-  data[language].push({
+  if (getFromLanguageCache(language, id) !== null) {
+    return
+  }
+
+  const newTranslation = {
     id: id,
     translation: translation,
     expiry: currentTime() + TWO_WEEKS
-  })
+  }
+
+  data[language] = [...data[language], newTranslation]
 
   data[language].sort((a, b) => {
     const keyA = a.id

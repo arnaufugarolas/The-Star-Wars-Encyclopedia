@@ -6,11 +6,11 @@
     "url": "https://github.com/arnaufugarolas/The-Star-Wars-Encyclopedia.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --mode development",
     "build": "webpack --mode production",
     "lint": "eslint src",
-    "test": "jest",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "start": "webpack-dev-server --hot --mode development",
+    "test": "jest"
   },
   "browserslist": {
     "production": [
@@ -29,12 +29,12 @@
     "parserOptions": {
       "requireConfigFile": false
     },
-    "rules": {
-      "react/prop-types": "off"
-    },
     "extends": [
       "standard"
-    ]
+    ],
+    "rules": {
+      "react/prop-types": "off"
+    }
   },
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.18.6",

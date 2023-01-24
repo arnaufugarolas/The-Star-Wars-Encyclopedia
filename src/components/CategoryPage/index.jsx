@@ -11,6 +11,8 @@ export const Index = () => {
   const { category } = useParams()
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
+  const [title, setTitle] = useState(category)
+  const language = 'ru'
 
   useEffect(() => {
     if (!loading) {
@@ -25,6 +27,10 @@ export const Index = () => {
   }, [loading])
 
   const getData = (url) => {
+    getStrings(category, language).then((res) => {
+      setTitle(res)
+    })
+
     axios.get(url).then((res) => {
       setData((prev) => [...prev, ...res.data.results])
 
@@ -38,21 +44,24 @@ export const Index = () => {
 
   return (
     <Page>
-      <PageTitle>{getStrings(category)}</PageTitle>
-      <CentralDiv>
-        <CategoryGrid container spacing={5}>
-          {data.map((item, index) => (
-            <Grid item xs='auto' key={index}>
-              <TitleCard
-                key={index}
-                title={item.name}
-                route={`/${category}/${item.url.split('/').at(-2)}`}
-              />
-            </Grid>))}
-        </CategoryGrid>
-      </CentralDiv>
+      <PageTitle>{title}</PageTitle>
+      <CategoryGrid container spacing={5}>
+        {data.map((item, index) => (
+          <Grid item xs='auto' key={index}>
+            <TitleCard
+              key={index}
+              title={item.name}
+              route={`/${category}/${item.url.split('/').at(-2)}`}
+            />
+          </Grid>))}
+      </CategoryGrid>
+      <CentralDiv />
     </Page>
   )
 }
+
+/*
+
+ */
 
 export default Index

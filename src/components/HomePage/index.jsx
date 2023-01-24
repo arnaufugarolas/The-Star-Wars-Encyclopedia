@@ -26,7 +26,7 @@ const Index = (props) => {
     const translatedCategories = []
 
     categories.forEach((category, index) => {
-      getStrings(category.categoryName, language).then((res) => {
+      getStrings(category.categoryName, language, 'HomePage').then((res) => {
         translatedCategories.push({
           categoryName: res,
           categoryImage: category.categoryImage,
@@ -47,7 +47,7 @@ const Index = (props) => {
           <Grid item xs='auto' key={index}>
             <CategoryCard
               key={index}
-              categoryName={getStrings(category.categoryName)}
+              categoryName={category.categoryName}
               categoryImage={category.categoryImage}
               route={category.route}
             />
