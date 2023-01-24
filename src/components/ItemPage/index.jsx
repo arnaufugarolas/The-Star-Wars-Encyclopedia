@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import TitleCard from '../TitleCard'
-import DataCard from '../DataCard'
-import { CentralDiv } from './styles'
-import Page from '../Page'
+import TitleCard from '../TitleCard/index.jsx'
+import DataCard from '../DataCard/index.jsx'
+import { CentralDiv } from './styles.js'
+import Page from '../Page/index.jsx'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 

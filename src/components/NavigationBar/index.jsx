@@ -1,9 +1,9 @@
 import React from 'react'
-import NavigationItem from '../NavigationItem'
-import LanguageButtonSelector from '../LanguageButtonSelector'
-import { BarGrid } from './styles'
+import NavigationItem from '../NavigationItem/index.jsx'
+import LanguageButtonSelector from '../LanguageButtonSelector/index.jsx'
+import { BarGrid } from './styles.js'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
-import getStrings from '../../helpper/StringHelpper'
+import getStrings from '../../helpper/StringHelpper/index.js'
 
 const routes = [
   { route: '/', pageName: 'home' },

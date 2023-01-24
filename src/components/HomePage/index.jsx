@@ -1,50 +1,45 @@
-import React from 'react'
-import CategoryCard from '../CategoryCard'
-import { CategoriesGrid } from './styles'
-import character from './resources/images/characters.png'
-import species from './resources/images/species.png'
-import films from './resources/images/films.png'
-import vehicle from './resources/images/vehicles.png'
-import starship from './resources/images/starships.png'
-import planet from './resources/images/planets.png'
-import Page from '../Page'
+import React, { useEffect, useState } from 'react'
+import CategoryCard from '../CategoryCard/index.jsx'
+import { CategoriesGrid } from './styles.js'
+import Page from '../Page/index.jsx'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
-import getStrings from '../../helpper/StringHelpper'
+import getStrings from '../../helpper/StringHelpper/index.js'
 
-const data = [
-  {
-    categoryName: 'people',
-    categoryImage: character,
-    route: '/people'
-  },
-  {
-    categoryName: 'species',
-    categoryImage: species,
-    route: '/species'
-  },
-  {
-    categoryName: 'films',
-    categoryImage: films,
-    route: '/films'
-  },
-  {
-    categoryName: 'vehicles',
-    categoryImage: vehicle,
-    route: '/vehicles'
-  },
-  {
-    categoryName: 'starships',
-    categoryImage: starship,
-    route: '/starships'
-  },
-  {
-    categoryName: 'planets',
-    categoryImage: planet,
-    route: '/planets'
+const Index = (props) => {
+  const { categories } = props
+  const [loading, setLoading] = useState(false)
+  const [data, setData] = useState(categories)
+  const language = 'ru'
+
+  useEffect(() => {
+    if (!loading) {
+      setLoading(true)
+    }
+  }, [categories])
+  useEffect(() => {
+    if (loading) {
+      translate()
+    }
+  }, [loading])
+
+  const translate = () => {
+    const translatedCategories = []
+
+    categories.forEach((category, index) => {
+      getStrings(category.categoryName, language).then((res) => {
+        translatedCategories.push({
+          categoryName: res,
+          categoryImage: category.categoryImage,
+          route: category.route
+        })
+        if (index === categories.length - 1) {
+          setData(translatedCategories)
+          setLoading(false)
+        }
+      })
+    })
   }
-]
 
-const Index = () => {
   return (
     <Page>
       <CategoriesGrid container rowSpacing={5} columnSpacing={5}>

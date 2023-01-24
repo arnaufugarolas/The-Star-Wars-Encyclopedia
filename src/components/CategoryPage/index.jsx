@@ -1,11 +1,11 @@
-import Page from '../Page'
+import Page from '../Page/index.jsx'
 import { useParams } from 'react-router-dom'
-import { CategoryGrid, CentralDiv, PageTitle } from './styles'
-import TitleCard from '../TitleCard'
+import { CategoryGrid, CentralDiv, PageTitle } from './styles.js'
+import TitleCard from '../TitleCard/index.jsx'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import getStrings from '../../helpper/StringHelpper'
+import getStrings from '../../helpper/StringHelpper/index.js'
 
 export const Index = () => {
   const { category } = useParams()

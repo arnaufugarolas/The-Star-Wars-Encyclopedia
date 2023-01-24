@@ -1,4 +1,4 @@
-import NavigationBar from '../NavigationBar'
+import NavigationBar from '../NavigationBar/index.jsx'
 
 export const Index = (props) => {
   const { children } = props

@@ -1,7 +1,7 @@
 import React from 'react'
-import DataItem from '../DataItem'
-import { DataCard } from './styles'
-import getStrings from '../../helpper/StringHelpper'
+import DataItem from '../DataItem/index.jsx'
+import { DataCard } from './styles.js'
+import getStrings from '../../helpper/StringHelpper/index.js'
 
 function Index (props) {
   const { data: dataObject } = props
