@@ -5,16 +5,16 @@ import TitleCard from '../TitleCard/index.jsx'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import getStrings from '../../helpper/StringHelpper/index.js'
+import getString from '../../helpper/StringHelpper/index.js'
 
 export const Index = () => {
-  const { category } = useParams()
+  const { category, language } = useParams()
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
   const [title, setTitle] = useState(category)
-  const language = 'ru'
 
   useEffect(() => {
+    console.log('category', category)
     if (!loading) {
       setData([])
       setLoading(true)
@@ -22,12 +22,13 @@ export const Index = () => {
   }, [category])
   useEffect(() => {
     if (loading && data.length === 0) {
+      console.log('loading', loading)
       getData(`https://swapi.dev/api/${category}/`)
     }
   }, [loading])
 
   const getData = (url) => {
-    getStrings(category, language).then((res) => {
+    getString(category, language).then((res) => {
       setTitle(res)
     })
 
@@ -50,8 +51,8 @@ export const Index = () => {
           <Grid item xs='auto' key={index}>
             <TitleCard
               key={index}
-              title={item.name}
-              route={`/${category}/${item.url.split('/').at(-2)}`}
+              title={item.name ? item.name : item.title}
+              route={`/${language}/${category}/${item.url.split('/').at(-2)}`}
             />
           </Grid>))}
       </CategoryGrid>
@@ -59,9 +60,5 @@ export const Index = () => {
     </Page>
   )
 }
-
-/*
-
- */
 
 export default Index

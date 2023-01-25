@@ -3,19 +3,57 @@ import CategoryCard from '../CategoryCard/index.jsx'
 import { CategoriesGrid } from './styles.js'
 import Page from '../Page/index.jsx'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
-import getStrings from '../../helpper/StringHelpper/index.js'
+import getString from '../../helpper/StringHelpper'
+import { useParams } from 'react-router-dom'
+import character from './resources/images/characters.png'
+import species from './resources/images/species.png'
+import films from './resources/images/films.png'
+import vehicle from './resources/images/vehicles.png'
+import starship from './resources/images/starships.png'
+import planet from './resources/images/planets.png'
 
-const Index = (props) => {
-  const { categories } = props
+const Index = () => {
   const [loading, setLoading] = useState(false)
+  const { language } = useParams()
+  const categories = [
+    {
+      categoryName: 'people',
+      categoryImage: character,
+      route: `/${language}/people`
+    },
+    {
+      categoryName: 'species',
+      categoryImage: species,
+      route: `/${language}/species`
+    },
+    {
+      categoryName: 'films',
+      categoryImage: films,
+      route: `/${language}/films`
+    },
+    {
+      categoryName: 'vehicles',
+      categoryImage: vehicle,
+      route: `/${language}/vehicles`
+    },
+    {
+      categoryName: 'starships',
+      categoryImage: starship,
+      route: `/${language}/starships`
+    },
+    {
+      categoryName: 'planets',
+      categoryImage: planet,
+      route: `/${language}/planets`
+    }
+  ]
   const [data, setData] = useState(categories)
-  const language = 'ru'
 
   useEffect(() => {
     if (!loading) {
       setLoading(true)
     }
-  }, [categories])
+  }, [categories, language])
   useEffect(() => {
     if (loading) {
       translate()
@@ -26,12 +64,13 @@ const Index = (props) => {
     const translatedCategories = []
 
     categories.forEach((category, index) => {
-      getStrings(category.categoryName, language, 'HomePage').then((res) => {
+      getString(category.categoryName, language).then((result) => {
         translatedCategories.push({
-          categoryName: res,
+          categoryName: result,
           categoryImage: category.categoryImage,
           route: category.route
         })
+
         if (index === categories.length - 1) {
           setData(translatedCategories)
           setLoading(false)

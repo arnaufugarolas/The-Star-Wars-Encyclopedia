@@ -5,11 +5,13 @@ import { CentralDiv } from './styles.js'
 import Page from '../Page/index.jsx'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import getString from '../../helpper/StringHelpper'
 
 const Index = () => {
-  const { category, id } = useParams()
+  const { category, id, language } = useParams()
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [title, setTitle] = useState('')
 
   useEffect(() => {
     if (!loading) {
@@ -25,9 +27,25 @@ const Index = () => {
 
   const getData = (url) => {
     axios.get(url).then((res) => {
-      setData(res.data)
-      setLoading(false)
+      setTitle(res.data.name || res.data.title)
+      translate(res.data)
     })
+  }
+
+  const translate = (data) => {
+    const newData = {}
+    const noTranslate = ['created', 'edited', 'url']
+    for (const key in data) {
+      if (noTranslate.indexOf(key) === -1) {
+        getString(key, language).then((res) => {
+          newData[res] = data[key]
+        })
+      } else if (key === 'url') {
+        newData[key] = data[key].split('/').at(-2)
+      }
+    }
+    setData(newData)
+    setLoading(false)
   }
 
   return (
@@ -36,7 +54,7 @@ const Index = () => {
         ? (
           <Page>
             <CentralDiv>
-              <TitleCard title={data.name ? data.name : data.title} />
+              <TitleCard title={title} />
             </CentralDiv>
             <CentralDiv>
               <DataCard data={data} />

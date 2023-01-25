@@ -204,7 +204,14 @@ const data = {
   vines: ['Vines', true],
   cities: ['Cities', true],
   savannahs: ['Savannahs', true],
-  cliffs: ['Cliffs', true]
+  cliffs: ['Cliffs', true],
+  title: ['Title', true],
+  episode_id: ['Episode ID', true],
+  opening_crawl: ['Opening Crawl', true],
+  director: ['Director', true],
+  producer: ['Producer', true],
+  release_date: ['Release Date', true],
+  characters: ['Characters', true]
 }
 
 export default data

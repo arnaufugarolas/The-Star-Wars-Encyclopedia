@@ -1,16 +1,19 @@
 import NavigationBar from '../NavigationBar/index.jsx'
+import React from 'react'
+import { useParams } from 'react-router-dom'
 
 export const Index = (props) => {
   const { children } = props
+  const { language } = useParams()
 
   const routes = [
-    { route: '/', pageName: 'home' },
-    { route: '/people', pageName: 'people' },
-    { route: '/films', pageName: 'films' },
-    { route: '/species', pageName: 'species' },
-    { route: '/vehicles', pageName: 'vehicles' },
-    { route: '/starships', pageName: 'starships' },
-    { route: '/planets', pageName: 'planets' }
+    { route: `/${language}/`, pageName: 'home' },
+    { route: `/${language}/people/`, pageName: 'people' },
+    { route: `/${language}/films/`, pageName: 'films' },
+    { route: `/${language}/species/`, pageName: 'species' },
+    { route: `/${language}/vehicles/`, pageName: 'vehicles' },
+    { route: `/${language}/starships/`, pageName: 'starships' },
+    { route: `/${language}/planets/`, pageName: 'planets' }
   ]
 
   return (

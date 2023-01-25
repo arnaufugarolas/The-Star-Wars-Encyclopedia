@@ -3,13 +3,14 @@ import NavigationItem from '../NavigationItem/index.jsx'
 import LanguageButtonSelector from '../LanguageButtonSelector/index.jsx'
 import { BarGrid } from './styles.js'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
-import getStrings from '../../helpper/StringHelpper/index.js'
+import getString from '../../helpper/StringHelpper/index.js'
+import { useParams } from 'react-router-dom'
 
 const Index = (props) => {
   const { routes } = props
   const [data, setData] = useState(routes)
   const [loading, setLoading] = useState(false)
-  const language = 'ru'
+  const { language } = useParams()
 
   useEffect(() => {
     if (!loading) {
@@ -27,7 +28,7 @@ const Index = (props) => {
     const translatedCategories = []
 
     routes.forEach((route, index) => {
-      getStrings(route.pageName, language, 'NavigationBar').then((res) => {
+      getString(route.pageName, language, 'NavigationBar').then((res) => {
         translatedCategories.push({
           pageName: res,
           route: route.route
