@@ -28,7 +28,7 @@ export const Index = () => {
   }, [loading])
 
   const getData = (url) => {
-    getString(category, language).then((res) => {
+    getString(category, language, 'CategoryPage').then((res) => {
       setTitle(res)
     })
 

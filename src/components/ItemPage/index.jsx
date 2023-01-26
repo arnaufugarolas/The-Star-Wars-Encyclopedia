@@ -37,7 +37,7 @@ const Index = () => {
     const noTranslate = ['created', 'edited', 'url']
     for (const key in data) {
       if (noTranslate.indexOf(key) === -1) {
-        getString(key, language).then((res) => {
+        getString(key, language, 'itemPage').then((res) => {
           newData[res] = data[key]
         })
       } else if (key === 'url') {

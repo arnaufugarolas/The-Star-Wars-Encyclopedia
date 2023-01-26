@@ -8,9 +8,9 @@ import { useParams } from 'react-router-dom'
 
 const Index = (props) => {
   const { routes } = props
+  const { language } = useParams()
   const [data, setData] = useState(routes)
   const [loading, setLoading] = useState(false)
-  const { language } = useParams()
 
   useEffect(() => {
     if (!loading) {
@@ -24,11 +24,17 @@ const Index = (props) => {
     }
   }, [loading])
 
+  useEffect(() => {
+    console.log('Data changed')
+    console.log(data)
+  }, [data])
+
   const translate = () => {
     const translatedCategories = []
 
     routes.forEach((route, index) => {
-      getString(route.pageName, language, 'NavigationBar').then((res) => {
+      console.log('translatedCategories', translatedCategories)
+      getString(route.pageName, language, 'Nav').then((res) => {
         translatedCategories.push({
           pageName: res,
           route: route.route
@@ -42,12 +48,12 @@ const Index = (props) => {
   }
 
   return (
-    <BarGrid container spacing='auto'>
-      <Grid item xs='auto'>
+    <BarGrid container spacing='auto' disableEqualOverflow rows={1}>
+      <Grid item xs>
         <LanguageButtonSelector />
       </Grid>
       {data.map((route, index) => (
-        <Grid item xs='auto' key={index}>
+        <Grid item xs key={index}>
           <NavigationItem
             key={index}
             route={route.route}

@@ -47,7 +47,7 @@ function Index (props) {
           setContentType('string')
           const newData = []
           content.forEach((item) => {
-            getString(item, language).then((res) => {
+            getString(item, language, 'DataItem').then((res) => {
               newData.push(res)
             })
           })
@@ -63,7 +63,7 @@ function Index (props) {
         setContentType('string')
         const newData = []
         content.split(/,\s/).forEach((item) => {
-          getString(item, language).then((res) => {
+          getString(item, language, 'DataItem2').then((res) => {
             newData.push(res)
           })
         })
@@ -72,7 +72,7 @@ function Index (props) {
       } else { // is string
         setContentType('string')
         if (isNaN(content)) {
-          getString(content, language).then((res) => {
+          getString(content, language, 'DataItem3').then((res) => {
             setData([res])
             resolve()
           })

@@ -50,7 +50,7 @@ const Index = () => {
   const [data, setData] = useState(categories)
 
   useEffect(() => {
-    if (!loading) {
+    if (!loading && categories === data) {
       setLoading(true)
     }
   }, [categories, language])
@@ -63,15 +63,16 @@ const Index = () => {
   const translate = () => {
     const translatedCategories = []
 
-    categories.forEach((category, index) => {
-      getString(category.categoryName, language).then((result) => {
+    categories.forEach((category) => {
+      getString(category.categoryName, language, 'HomePage').then((result) => {
         translatedCategories.push({
           categoryName: result,
           categoryImage: category.categoryImage,
           route: category.route
         })
-
-        if (index === categories.length - 1) {
+        if (translatedCategories.length === categories.length) {
+          console.log('Loading: ', loading)
+          console.log('Data: ', data)
           setData(translatedCategories)
           setLoading(false)
         }
