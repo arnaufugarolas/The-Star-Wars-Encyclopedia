@@ -9,35 +9,36 @@ import starship from './resources/images/starships.png'
 import planet from './resources/images/planets.png'
 import Page from '../Page'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
+import getStrings from '../../helpper/StringHelpper'
 
 const data = [
   {
-    categoryName: 'People',
+    categoryName: 'people',
     categoryImage: character,
     route: '/people'
   },
   {
-    categoryName: 'Species',
+    categoryName: 'species',
     categoryImage: species,
     route: '/species'
   },
   {
-    categoryName: 'Films',
+    categoryName: 'films',
     categoryImage: films,
     route: '/films'
   },
   {
-    categoryName: 'Vehicles',
+    categoryName: 'vehicles',
     categoryImage: vehicle,
     route: '/vehicles'
   },
   {
-    categoryName: 'Starships',
+    categoryName: 'starships',
     categoryImage: starship,
     route: '/starships'
   },
   {
-    categoryName: 'Planets',
+    categoryName: 'planets',
     categoryImage: planet,
     route: '/planets'
   }
@@ -51,7 +52,7 @@ const Index = () => {
           <Grid item xs='auto' key={index}>
             <CategoryCard
               key={index}
-              categoryName={category.categoryName}
+              categoryName={getStrings(category.categoryName)}
               categoryImage={category.categoryImage}
               route={category.route}
             />
