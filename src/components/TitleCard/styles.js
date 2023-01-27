@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 export const TitleCard = styled.div`
   display: flex;
   overflow: clip;
-  width: ${props => props.width};
-  height: ${props => props.height};
   align-items: center;
   justify-content: center;
+  padding: 1.5rem 3rem;
+  ${props => props.isRoute ? 'margin-top: 0;' : 'margin-top: 2rem;'}
   border-radius: ${props => props.borderRadius};
   background-color: ${props => props.backgroundColor};
   color: ${props => props.textColor};
@@ -21,8 +21,6 @@ export const MenuLink = styled(Link)`
 
 TitleCard.defaultProps = {
   className: 'title-card',
-  width: '15rem',
-  height: '5rem',
   fontSize: '1.5rem',
   backgroundColor: 'var(--clr-black)',
   textColor: 'var(--clr-yellow)',

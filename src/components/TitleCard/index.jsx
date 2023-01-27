@@ -9,7 +9,7 @@ export const Index = (props) => {
       {route
         ? (
           <MenuLink to={route}>
-            <TitleCard>{title}</TitleCard>
+            <TitleCard isRoute={route}>{title}</TitleCard>
           </MenuLink>
           )
         : (

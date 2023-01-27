@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const MenuItem = styled.p`
   display: flex;
-  width: ${props => props.width};
-  height: ${props => props.height};
+  height: fit-content;
   align-items: center;
   justify-content: center;
   color: ${props => props.textColor};
@@ -17,9 +16,8 @@ export const MenuLink = styled(Link)`
 `
 
 MenuItem.defaultProps = {
-  width: '15rem',
   height: '5rem',
   textColor: 'var(--clr-yellow)',
   fontFamily: 'var(--ff-primary-body)',
-  fontSize: '2rem'
+  fontSize: '2em'
 }
