@@ -10,8 +10,10 @@ const languages3 = ['Dutch', 'Polish', 'Portugese', 'Portuguese (Brazilian)​',
 const Index = () => {
   return (
     <LanguageSelectorContainer>
+      <br />
       <SelectLanguage>Select your Language</SelectLanguage>
-      <Grid container spacing={1}>
+      <br />
+      <Grid container spacing={0}>
         <Grid xs>
           <LanguageItem languages={languages} />
         </Grid>
