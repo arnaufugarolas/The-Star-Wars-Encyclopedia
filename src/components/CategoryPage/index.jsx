@@ -1,25 +1,29 @@
-import Page from '../Page'
+import Page from '../Page/index.jsx'
 import { useParams } from 'react-router-dom'
-import { CategoryGrid, CentralDiv, PageTitle } from './styles'
-import TitleCard from '../TitleCard'
+import { CategoryGrid, CentralDiv, PageTitle } from './styles.js'
+import TitleCard from '../TitleCard/index.jsx'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import getStrings from '../../helpper/StringHelpper'
+import getString from '../../helpper/StringHelpper/index.js'
 
 export const Index = () => {
-  const { category } = useParams()
+  const { category, language } = useParams()
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
+  const [title, setTitle] = useState(category)
 
   useEffect(() => {
     if (!loading) {
       setData([])
       setLoading(true)
     }
-  }, [category])
+  }, [category, language])
   useEffect(() => {
     if (loading && data.length === 0) {
+      getString(category, language, 'CategoryPage').then((res) => {
+        setTitle(res)
+      })
       getData(`https://swapi.dev/api/${category}/`)
     }
   }, [loading])
@@ -33,27 +37,23 @@ export const Index = () => {
       } else {
         setLoading(false)
       }
-      console.log(res.data)
     })
   }
 
-  console.log(data)
-
   return (
     <Page>
-      <PageTitle>{getStrings(category)}</PageTitle>
-      <CentralDiv>
-        <CategoryGrid container spacing={5}>
-          {data.map((item, index) => (
-            <Grid item xs='auto' key={index}>
-              <TitleCard
-                key={index}
-                title={item.name}
-                route={`/${category}/${item.url.split('/').at(-2)}`}
-              />
-            </Grid>))}
-        </CategoryGrid>
-      </CentralDiv>
+      <PageTitle>{title}</PageTitle>
+      <CategoryGrid container spacing={5}>
+        {data.map((item, index) => (
+          <Grid item xs='auto' key={index}>
+            <TitleCard
+              key={index}
+              title={item.name ? item.name : item.title}
+              route={`/${language}/${category}/${item.url.split('/').at(-2)}`}
+            />
+          </Grid>))}
+      </CategoryGrid>
+      <CentralDiv />
     </Page>
   )
 }

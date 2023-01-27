@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import LanguageSelector from '../LanguageSelector'
-import { ClicableText, Container } from './styles'
+import LanguageSelector from '../LanguageSelector/index.jsx'
+import { ClicableText, Container } from './styles.js'
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false)

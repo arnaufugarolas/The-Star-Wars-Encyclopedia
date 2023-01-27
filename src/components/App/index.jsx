@@ -1,16 +1,17 @@
 import React from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import HomePage from '../HomePage'
-import ItemPage from '../ItemPage'
 import CategoryPage from '../CategoryPage'
-import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import ItemPage from '../ItemPage'
 
 const Index = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/:category' element={<CategoryPage />} />
-        <Route path='/:category/:id' element={<ItemPage />} />
+        <Route path='/' element={<Navigate to='/en/' />} />
+        <Route path='/:language/' element={<HomePage />} />
+        <Route path='/:language/:category/' element={<CategoryPage />} />
+        <Route path='/:language/:category/:id/' element={<ItemPage />} />
       </Routes>
     </BrowserRouter>
   )
