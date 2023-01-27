@@ -19,10 +19,10 @@ const getString = (key, language, context) => {
       const cachedTranslation = getFromLanguageCache(language, keyHash)
 
       if (cachedTranslation !== null) {
-        console.log('Translation from cache', context)
+        console.log('Translation from cache ', context)
         resolve(cachedTranslation.translation)
       } else {
-        console.log('Translation from deepl', context)
+        console.log('Translation from deepl ', context)
         getStringFromDeepl(string, language, keyHash).then((result) => { resolve(result) })
       }
     } else {
