@@ -1,19 +1,12 @@
 import styled from '@emotion/styled'
 
 export const LanguageSelectorContainer = styled.div`
-  max-width: 60rem;
+  max-width: 50rem;
+  border-radius: 1rem;
+  opacity: 0.85;
   justify-content: center;
-  border-radius: 1.5rem;
-  margin: 0 auto;
   background-color: #000000;
 `
-
-export const ButtonContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-`
-
 export const LanguageItemContainer = styled.div`
   display: grid;
   margin-top: 1rem;
