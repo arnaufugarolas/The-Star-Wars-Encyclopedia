@@ -13,7 +13,7 @@ const Index = () => {
       <br />
       <SelectLanguage>Select your Language</SelectLanguage>
       <br />
-      <Grid container spacing={0}>
+      <Grid container spacing={1}>
         <Grid xs>
           <LanguageItem languages={languages} />
         </Grid>
@@ -24,6 +24,7 @@ const Index = () => {
           <LanguageItem languages={languages3} />
         </Grid>
       </Grid>
+      <br />
     </LanguageSelectorContainer>
   )
 }
