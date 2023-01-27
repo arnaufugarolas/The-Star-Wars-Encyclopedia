@@ -9,18 +9,19 @@ import getString from '../../helpper/StringHelpper'
 
 const Index = () => {
   const { category, id, language } = useParams()
-  const [data, setData] = useState(null)
+  const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
   const [title, setTitle] = useState('')
 
   useEffect(() => {
     if (!loading) {
-      setData(null)
+      setData([])
       setLoading(true)
     }
-  }, [category, id])
+  }, [category, id, language])
+
   useEffect(() => {
-    if (loading && data === null) {
+    if (loading && data.length === 0) {
       getData(`https://swapi.dev/api/${category}/${id}/`)
     }
   }, [loading])
@@ -37,7 +38,7 @@ const Index = () => {
     const noTranslate = ['created', 'edited', 'url']
     for (const key in data) {
       if (noTranslate.indexOf(key) === -1) {
-        getString(key, language).then((res) => {
+        getString(key, language, 'ItemPage').then((res) => {
           newData[res] = data[key]
         })
       } else if (key === 'url') {

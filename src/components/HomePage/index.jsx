@@ -13,7 +13,6 @@ import starship from './resources/images/starships.png'
 import planet from './resources/images/planets.png'
 
 const Index = () => {
-  const [loading, setLoading] = useState(false)
   const { language } = useParams()
   const categories = [
     {
@@ -47,7 +46,8 @@ const Index = () => {
       route: `/${language}/planets`
     }
   ]
-  const [data, setData] = useState(categories)
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (!loading) {
@@ -55,7 +55,7 @@ const Index = () => {
     }
   }, [categories, language])
   useEffect(() => {
-    if (loading) {
+    if (loading && data.length === 0) {
       translate()
     }
   }, [loading])
@@ -64,7 +64,7 @@ const Index = () => {
     const translatedCategories = []
 
     categories.forEach((category, index) => {
-      getString(category.categoryName, language).then((result) => {
+      getString(category.categoryName, language, 'HomePage').then((result) => {
         translatedCategories.push({
           categoryName: result,
           categoryImage: category.categoryImage,

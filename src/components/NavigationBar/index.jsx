@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom'
 
 const Index = (props) => {
   const { routes } = props
-  const [data, setData] = useState(routes)
+  const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
   const { language } = useParams()
 
@@ -19,7 +19,7 @@ const Index = (props) => {
   }, [routes])
 
   useEffect(() => {
-    if (loading) {
+    if (loading && data.length === 0) {
       translate()
     }
   }, [loading])

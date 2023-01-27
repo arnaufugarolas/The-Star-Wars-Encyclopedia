@@ -14,24 +14,21 @@ export const Index = () => {
   const [title, setTitle] = useState(category)
 
   useEffect(() => {
-    console.log('category', category)
     if (!loading) {
       setData([])
       setLoading(true)
     }
-  }, [category])
+  }, [category, language])
   useEffect(() => {
     if (loading && data.length === 0) {
-      console.log('loading', loading)
+      getString(category, language, 'CategoryPage').then((res) => {
+        setTitle(res)
+      })
       getData(`https://swapi.dev/api/${category}/`)
     }
   }, [loading])
 
   const getData = (url) => {
-    getString(category, language).then((res) => {
-      setTitle(res)
-    })
-
     axios.get(url).then((res) => {
       setData((prev) => [...prev, ...res.data.results])
 

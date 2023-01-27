@@ -24,17 +24,6 @@ const getCache = () => {
   return cache
 }
 
-export const getLanguageCache = (language) => {
-  const cache = getCache()
-  const data = cache.data
-
-  if (data[language]) {
-    return data[language]
-  }
-
-  return []
-}
-
 export const getFromLanguageCache = (language, id) => {
   const cache = getCache()
   const data = cache.data
@@ -75,8 +64,8 @@ export const addToCache = (language, id, translation) => {
   }
 
   const newTranslation = {
-    id: id,
-    translation: translation,
+    id,
+    translation,
     expiry: currentTime() + TWO_WEEKS
   }
 
@@ -128,7 +117,7 @@ const cleanUpStorage = (data) => {
   localStorage.setItem(
     CACHE,
     JSON.stringify({
-      data: data,
+      data,
       nextCleanup: currentTime() + TWO_WEEKS
     })
   )
