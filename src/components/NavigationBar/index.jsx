@@ -40,9 +40,8 @@ const Index = (props) => {
       })
     })
   }
-
   return (
-    <BarGrid container spacing='auto'>
+    <BarGrid container spacing={5}>
       <Grid item xs='auto'>
         <LanguageButtonSelector />
       </Grid>

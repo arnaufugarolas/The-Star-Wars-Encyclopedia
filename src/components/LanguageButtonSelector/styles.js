@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 
 export const ClicableText = styled.p`
-  width: ${props => props.width};
   height: ${props => props.height};
   align-items: center;
   justify-content: center;
@@ -19,7 +18,6 @@ export const Container = styled.div`
 `
 
 ClicableText.defaultProps = {
-  width: '15rem',
   height: '5rem',
   textColor: 'var(--clr-yellow)',
   fontFamily: 'var(--ff-primary-body)',

@@ -43,9 +43,9 @@ export const Index = () => {
   return (
     <Page>
       <PageTitle>{title}</PageTitle>
-      <CategoryGrid container spacing={5}>
+      <CategoryGrid container spacing={2}>
         {data.map((item, index) => (
-          <Grid item xs='auto' key={index}>
+          <Grid spacing='auto' item style={{ whiteSpace: 'nowrap' }} key={index}>
             <TitleCard
               key={index}
               title={item.name ? item.name : item.title}
