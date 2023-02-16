@@ -4,8 +4,8 @@ import { SelectLanguage, LanguageSelectorContainer } from './styles'
 import { Unstable_Grid2 as Grid } from '@mui/material/'
 
 const languages = ['English', 'Wookiee', 'German', 'Bulgarian', 'Czech', 'Chinese (simplified)', 'Danish', 'Slovak', 'Slovenian', 'Estonian']
-const languages2 = ['Spanish', 'Finnish', 'French', 'Greek', 'Hungarian', 'Indonesian', 'Italian', 'Japanese', ' Latvin', 'Lithuanian']
-const languages3 = ['Dutch', 'Polish', 'Portuguese', 'Portuguese (Brazilian)​', 'Romanian', 'Russian', 'Swedish', 'Turkish', 'Ucranian']
+const languages2 = ['Spanish', 'Finnish', 'French', 'Greek', 'Hungarian', 'Indonesian', 'Italian', 'Japanese', 'Latvin', 'Lithuanian']
+const languages3 = ['Dutch', 'Polish', 'Portuguese', 'Portuguese (Brazilian)', 'Romanian', 'Russian', 'Swedish', 'Turkish', 'Ucranian']
 
 const Index = () => {
   return (
