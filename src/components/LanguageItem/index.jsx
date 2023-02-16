@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { LanguageText } from './styles'
 
 const languageCodes = {
@@ -40,11 +40,14 @@ const getLanguageCode = (name) => {
 }
 
 const Index = ({ languages }) => {
+  const location = useLocation()
+  const currentLanguageCode = location.pathname.split('/')[1]
+
   return (
     <ul>
       {languages.map((language, index) => (
         <li key={index}>
-          <Link to={`/${getLanguageCode(language)}`}>
+          <Link to={`${location.pathname.replace(`/${currentLanguageCode}`, `/${getLanguageCode(language)}`)}`}>
             <LanguageText>{language}</LanguageText>
           </Link>
         </li>
