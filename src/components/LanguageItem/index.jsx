@@ -19,7 +19,7 @@ const languageCodes = {
   ja: 'Japanese',
   ko: 'Korean',
   lt: 'Lithuanian',
-  lv: 'Latvian',
+  lv: 'Latvin',
   nb: 'Norwegian',
   nl: 'Dutch',
   pl: 'Polish',
@@ -31,7 +31,7 @@ const languageCodes = {
   sl: 'Slovenian',
   sv: 'Swedish',
   tr: 'Turkish',
-  uk: 'Ukrainian',
+  uk: 'Ucranian',
   zh: 'Chinese (simplified)'
 }
 
